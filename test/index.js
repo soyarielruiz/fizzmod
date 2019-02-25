@@ -43,3 +43,7 @@ let miembros = { pedro : 35 , ana : 18 , carlos : 43 , juan : 21 , maria : 29 , 
     })
     console.log(res) // [2,3]
 })()
+
+/**
+ * 7) Crear un modulo .js que contenga una variable llamada base cuyo valor es el número 2 y tres funciones, las cual va a exportar cada vez que se requiera el archivo llamadas multiplicar , cambiarBase y consultarBase. La función multiplicar toma un valor como input de tipo Number o String y lo multiplica por el valor de la variable base. La función cambiarBase modifica el valor de la variable base el cual se mantiene para las próximas ejecuciones y consultarBase retorna el valor actual de la variable base
+ */
