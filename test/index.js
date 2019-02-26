@@ -10,7 +10,7 @@ mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
 mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
 mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
 
-// Respuesta 3)
+// Respuesta a punto 3
 function mapCustomizado( list, callback ) {
 	let res = [];
 	let add;
@@ -21,7 +21,6 @@ function mapCustomizado( list, callback ) {
 		} else {
 			add = callback(elem);	
 		}
-		console.log(add);
 		res.push = add;
 		add = 0;
 	});
@@ -36,12 +35,47 @@ numeros.mapCustomizado(numero=>{}) //[undefined,undefined,undefined,undefined]
 numeros.hasOwnProperty("mapCustomizado") //false
 "mapCustomizado" in numeros //true
 
+// Respuesta a punto 4
+Array.prototype.mapCustomizado = function( callback ) {
+	let res = [];
+	let add;
+	var count = 0;
+	this.forEach( function(elem) {
+		if ( String(callback).indexOf("indice") > -1)
+		{
+		  	add = callback(elem, count);
+		} else {
+			add = callback(elem);
+		}
+		count ++;
+		res.push = add;
+		add = 0;
+	});
+}
+
 /**
  * 5) Los miembros de trabajo especificados en el siguiente objeto usan su nombre como indice y su edad como valor. Separa los miembros mayores de 40 años y menores de 25 años en un array y todo el resto en un segundo array. Ambos arrays tienen que estar compuestos únicamente por los nombres de las personas. Por último cada array tiene que estar ordenado alfabeticamente.
  */
 
 let miembros = { pedro : 35 , ana : 18 , carlos : 43 , juan : 21 , maria : 29 , angela : 31 , jose : 23 , mariana : 41 , eugenio : 19 }
 
+// Respuesta a punto 5
+function createCluster( miembros ) {
+	var names 			= Object.keys(miembros);
+	var ages			= Object.values(miembros);
+	let firstCluster 	= [];
+	let secondCluster 	= [];
+
+	for (var i = 0; i < names.length; i++) {
+		if ( ages[i] > 40 || ages[i] < 25 ) {
+			firstCluster.push(names[i])
+		} else {
+			secondCluster.push(names[i])
+		}
+	}
+	firstCluster.sort();
+	secondCluster.sort();
+}
 /**
  * 4) Crear un fork de este repositorio en sus propias cuentas
  * 5) Clonar el fork obtenido
