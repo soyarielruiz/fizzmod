@@ -88,10 +88,7 @@ function createCluster( miembros ) {
     let x = 1 , arr = [], y = 2;
     arr.push(x,y);
     console.log(arr);
-    let res = arr.forEach(n=>{
-        console.log(`El numero en el indice ${arr.indexOf(n)} es : ${n}`),
-        res + 1
-    });
+    let res = arr.map(n=> n + 1);
     console.log(res) // [2,3]
 })()
 
