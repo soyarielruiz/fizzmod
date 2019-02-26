@@ -89,12 +89,24 @@ function createCluster( miembros ) {
     arr.push(x,y);
     console.log(arr);
     let res = arr.forEach(n=>{
-        console.log(`El numero en el indice ${arr.indexOf(n)} es : ${n}`);
+        console.log(`El numero en el indice ${arr.indexOf(n)} es : ${n}`),
         res + 1
-    })
+    });
     console.log(res) // [2,3]
 })()
 
+
 /**
  * 7) Crear un modulo .js que contenga una variable llamada base cuyo valor es el número 2 y tres funciones, las cual va a exportar cada vez que se requiera el archivo llamadas multiplicar , cambiarBase y consultarBase. La función multiplicar toma un valor como input de tipo Number o String y lo multiplica por el valor de la variable base. La función cambiarBase modifica el valor de la variable base el cual se mantiene para las próximas ejecuciones y consultarBase retorna el valor actual de la variable base
+ */
+
+ // El ejercicio 7 está resuelto en el archivo exponentiation.js para llamarla
+ /*
+	import {Multiplication} from 'multiplication';
+
+	var exp = new Multiplication();
+
+	console.log(exp.multiplicar(2)); //4
+	console.log(exp.cambiarBase(3)); // cambia base a 3
+	console.log(exp.consultarBase()); // 3
  */
