@@ -10,6 +10,23 @@ mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
 mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
 mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
 
+// Respuesta 3)
+function mapCustomizado( list, callback ) {
+	let res = [];
+	let add;
+	list.forEach( function(elem) {
+		if ( String(callback).indexOf("indice") > -1)
+		{
+		  	add = callback(elem, list.indexOf(elem));
+		} else {
+			add = callback(elem);	
+		}
+		console.log(add);
+		res.push = add;
+		add = 0;
+	});
+}
+
 /**
  * 4) Modificar el prototipo de la funcion constructora Array para que admita como nuevo método la funcion customizada del paso anterior para que cumpla los siguientes tests :
  */
